@@ -90,3 +90,6 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  assets:
+    - models/android/Hey-Peter_en_android_v2_1_0.ppn
+    - models/android/0.rhn
