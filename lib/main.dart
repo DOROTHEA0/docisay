@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-
-
-import 'package:picovoice_flutter/picovoice_manager.dart';
-import 'package:picovoice_flutter/picovoice_error.dart';
 import 'package:rhino_flutter/rhino.dart';
+import 'package:docisay/api_interface/picovoice.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,71 +30,28 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  PicovoiceManager? picovoiceManager;
+  PicoVoiceInterface? picoVoiceInterface;
 
   @override
   void initState() {
     super.initState();
-    initPicovoice();
-    startPicoVoice();
-  }
 
-  Future<void> initPicovoice() async {
     String keywordPath = "models/android/Hey-Peter_en_android_v2_1_0.ppn";
     String contextPath = "models/android/0.rhn";
-
     String accessKey = "rNv8gA47ss8Ic8Bsx95tZFyQTToXs/aD6fsltCtCq8KihHDJr5JtHQ==";
-    picovoiceManager = PicovoiceManager.create(accessKey, keywordPath,
-        wakeWordCallback, contextPath, infererenceCallback);
-  }
-
-  void wakeWordCallback(){
-    _incrementCounter();
-  }
-
-  void infererenceCallback(RhinoInference inference){
-    if(inference.isUnderstood!){
-      String intent = inference.intent!;
-      Map<String, String> slots = inference.slots!;
-      // take action based on inferred intent and slot values
+    wakeWordCallback(){
+      _incrementCounter();
     }
-    else{
-      // handle unsupported commands
+    infererenceCallback(RhinoInference inference){
+      print(inference);
     }
+    errorCallback(msg){
+      print(msg);
+    }
+    picoVoiceInterface = new PicoVoiceInterface(accessKey, keywordPath, contextPath, wakeWordCallback, infererenceCallback, errorCallback);
+    picoVoiceInterface?.startPicoVoice();
   }
 
-
-  void errorCallback(PicovoiceException error) {
-    if (error.message != null) {
-      print(error.message);
-    }
-  }
-
-  Future<void> startPicoVoice() async {
-    try {
-      if (picovoiceManager == null) {
-        throw PicovoiceInvalidStateException(
-            "picovoiceManager not initialized.");
-      }
-      await picovoiceManager!.start();
-    } on PicovoiceInvalidArgumentException catch (ex) {
-      errorCallback(PicovoiceInvalidArgumentException(
-          "${ex.message}\nEnsure your accessKey 'accessKey' is a valid access key."));
-    } on PicovoiceActivationException {
-      errorCallback(
-          PicovoiceActivationException("AccessKey activation error."));
-    } on PicovoiceActivationLimitException {
-      errorCallback(PicovoiceActivationLimitException(
-          "AccessKey reached its device limit."));
-    } on PicovoiceActivationRefusedException {
-      errorCallback(PicovoiceActivationRefusedException("AccessKey refused."));
-    } on PicovoiceActivationThrottledException {
-      errorCallback(PicovoiceActivationThrottledException(
-          "AccessKey has been throttled."));
-    } on PicovoiceException catch (ex) {
-      errorCallback(ex);
-    }
-  }
 
   void _incrementCounter() {
     setState(() {
