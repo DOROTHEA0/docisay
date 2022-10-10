@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rhino_flutter/rhino.dart';
 import 'package:docisay/api_interface/picovoice.dart';
+import 'package:alan_voice/alan_voice.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,8 +49,11 @@ class _MyHomePageState extends State<MyHomePage> {
     errorCallback(msg){
       print(msg);
     }
-    picoVoiceInterface = new PicoVoiceInterface(accessKey, keywordPath, contextPath, wakeWordCallback, infererenceCallback, errorCallback);
-    picoVoiceInterface?.startPicoVoice();
+    //picoVoiceInterface = new PicoVoiceInterface(accessKey, keywordPath, contextPath, wakeWordCallback, infererenceCallback, errorCallback);
+    //picoVoiceInterface?.startPicoVoice();
+    AlanVoice.addButton(
+        "2fef87232c0980a1d1e3a5d6d8f936412e956eca572e1d8b807a3e2338fdd0dc/stage",
+        buttonAlign: AlanVoice.BUTTON_ALIGN_LEFT);
   }
 
 
