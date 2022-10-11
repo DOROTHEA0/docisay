@@ -1,0 +1,68 @@
+PODS:
+  - alan_voice (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+  - flutter_voice_processor (1.0.6):
+    - Flutter
+  - ios-voice-processor (1.0.3)
+  - package_info (0.0.1):
+    - Flutter
+  - path_provider_ios (0.0.1):
+    - Flutter
+  - Porcupine-iOS (2.1.2):
+    - ios-voice-processor (~> 1.0.2)
+  - porcupine_flutter (2.1.6):
+    - Flutter
+    - Porcupine-iOS (~> 2.1.2)
+  - Rhino-iOS (2.1.3):
+    - ios-voice-processor (~> 1.0.2)
+  - rhino_flutter (2.1.7):
+    - Flutter
+    - Rhino-iOS (~> 2.1.3)
+
+DEPENDENCIES:
+  - alan_voice (from `.symlinks/plugins/alan_voice/ios`)
+  - Flutter (from `Flutter`)
+  - flutter_voice_processor (from `.symlinks/plugins/flutter_voice_processor/ios`)
+  - package_info (from `.symlinks/plugins/package_info/ios`)
+  - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
+  - porcupine_flutter (from `.symlinks/plugins/porcupine_flutter/ios`)
+  - rhino_flutter (from `.symlinks/plugins/rhino_flutter/ios`)
+
+SPEC REPOS:
+  trunk:
+    - ios-voice-processor
+    - Porcupine-iOS
+    - Rhino-iOS
+
+EXTERNAL SOURCES:
+  alan_voice:
+    :path: ".symlinks/plugins/alan_voice/ios"
+  Flutter:
+    :path: Flutter
+  flutter_voice_processor:
+    :path: ".symlinks/plugins/flutter_voice_processor/ios"
+  package_info:
+    :path: ".symlinks/plugins/package_info/ios"
+  path_provider_ios:
+    :path: ".symlinks/plugins/path_provider_ios/ios"
+  porcupine_flutter:
+    :path: ".symlinks/plugins/porcupine_flutter/ios"
+  rhino_flutter:
+    :path: ".symlinks/plugins/rhino_flutter/ios"
+
+SPEC CHECKSUMS:
+  alan_voice: 3299393a953a060d0e937776ba6efcf5c4a61304
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  flutter_voice_processor: afb59b604d99397a1ccf15c935ac8f2c2327f09f
+  ios-voice-processor: 65b25a8db69ea25ffba0eeef37bae71a982f34cc
+  package_info: 873975fc26034f0b863a300ad47e7f1ac6c7ec62
+  path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02
+  Porcupine-iOS: 884f40edadf4b72fac6fae768d3247bdb48841f7
+  porcupine_flutter: b1f28f08b9da19bcba7adb38e6231b55ebdd0558
+  Rhino-iOS: a211c1c9da37d4c9187e1ce5bba6a2c06c6ce4b0
+  rhino_flutter: 8d30b0223b5a95f380060651f83818f4fcb3b082
+
+PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
+
+COCOAPODS: 1.11.3

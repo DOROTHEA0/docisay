@@ -92,7 +92,9 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Container(
-        child: chatList(context),
+        child: SingleChildScrollView(
+          child: chatList(context),
+        ),
 
       ),// This trailing comma makes auto-formatting nicer for build methods.
     );
