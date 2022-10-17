@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "155281125194",
+    "project_id": "docisay-197fc",
+    "storage_bucket": "docisay-197fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155281125194:android:1aa5a67c2ab13d9a30dbb3",
+        "android_client_info": {
+          "package_name": "com.example.docisay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "155281125194-cgmf2g1bd663k4063r6oai0n4dgila7i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv80l8TxCxIipKaxOKmQwT0-u7yfdrcQ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "155281125194-cgmf2g1bd663k4063r6oai0n4dgila7i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "155281125194-5kcmb3tmr32m3k8l9and2op6ah9sndeq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.docisay"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
