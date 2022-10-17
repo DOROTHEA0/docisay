@@ -139,6 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
       tiles.add(bubbles(context,true,item));
     }
     setDatas();
+
     content = new Column(
       children: tiles,
     );
