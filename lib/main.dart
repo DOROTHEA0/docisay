@@ -1,13 +1,21 @@
 import 'dart:ffi';
 
 
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:rhino_flutter/rhino.dart';
 import 'package:docisay/api_interface/picovoice.dart';
 import 'package:alan_voice/alan_voice.dart';
 import 'package:chat_bubbles/chat_bubbles.dart';
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+void main() async{
+
   runApp(const MyApp());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -35,7 +43,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   PicoVoiceInterface? picoVoiceInterface;
   bool isMyself = true;
-
   bool alanActive = false;
   @override
   void initState() {
@@ -83,20 +90,35 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  FirebaseDatabase database = FirebaseDatabase.instance;
+  DatabaseReference ref = FirebaseDatabase.instance.ref();
+ Future<void> setDatas() async {
+  await ref.set({
+  "name": "john"
 
+  });
+}
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+
       ),
       body: Container(
         child: SingleChildScrollView(
           child: chatList(context),
         ),
+      ),
+      // MaterialApp(
+      //   initialRoute: "/",
+      //   routes: {
+      //
+      //   },
+      // )
 
-      ),// This trailing comma makes auto-formatting nicer for build methods.
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
@@ -108,6 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         tiles.add(bubbles(context, isMyself, message));
       });
+
   }
 
   Widget chatList(BuildContext context){
@@ -115,6 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
     for(var item in messages){
       tiles.add(bubbles(context,true,item));
     }
+    setDatas();
     content = new Column(
       children: tiles,
     );
