@@ -1,13 +1,6 @@
-import 'dart:ffi';
-
-
 import 'package:docisay/route/MyHomePage.dart';
 import 'package:docisay/route/login.dart';
 import 'package:flutter/material.dart';
-import 'package:rhino_flutter/rhino.dart';
-import 'package:docisay/api_interface/picovoice.dart';
-import 'package:alan_voice/alan_voice.dart';
-import 'package:chat_bubbles/chat_bubbles.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -25,14 +18,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'DociSay Conversation Dialogue',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       //home: const MyHomePage(title: 'DociSay Conversation Dialogue'),
-      initialRoute: "/login",
+      initialRoute: "/",
       routes: {
-        '/': (context) => MyHomePage(title: 'myhome',),
+        '/': (context) => MyHomePage(),
         '/login': (context) => Login(),
 
       },
