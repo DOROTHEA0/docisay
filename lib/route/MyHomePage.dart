@@ -1,12 +1,9 @@
 
 
-import 'package:docisay/route/chatBox.dart';
 import 'package:docisay/route/home.dart';
-
-
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
-
+import 'chatPage.dart';
 import 'me.dart';
 
 
@@ -26,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
   int count=0;
 
-  final _pages = [home(),chatBox(),me()];
+  final _pages = [home(),ChatPage(),me()];
   int _currentIndex = 1;
   @override
   Widget build(BuildContext context) {

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_bubbles/chat_bubbles.dart';
 
+
 import '../api_interface/picovoice.dart';
 
 
@@ -10,6 +11,7 @@ class chatBox extends StatefulWidget{
   const chatBox({super.key});
   State<chatBox> createState() => _chatBox();
 }
+
 class _chatBox extends State<chatBox> {
   PicoVoiceInterface? picoVoiceInterface;
   bool isMyself = true;
@@ -68,6 +70,7 @@ class _chatBox extends State<chatBox> {
           child: chatList(context),
         ),
       ),
+
 
     );
   }
