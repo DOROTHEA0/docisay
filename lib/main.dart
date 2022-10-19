@@ -3,7 +3,6 @@ import 'dart:ffi';
 
 import 'package:docisay/route/MyHomePage.dart';
 import 'package:docisay/route/login.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:rhino_flutter/rhino.dart';
 import 'package:docisay/api_interface/picovoice.dart';

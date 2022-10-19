@@ -1,11 +1,11 @@
 import 'package:docisay/route/login.dart';
-import 'package:firebase_database/firebase_database.dart';
+
 import 'package:flutter/material.dart';
 import 'package:rhino_flutter/rhino.dart';
 import 'package:docisay/api_interface/picovoice.dart';
 import 'package:alan_voice/alan_voice.dart';
 import 'package:chat_bubbles/chat_bubbles.dart';
-import 'package:firebase_core/firebase_core.dart';
+
 
 
 class MyHomePage extends StatefulWidget {
@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // }
     //picoVoiceInterface = new PicoVoiceInterface(accessKey, keywordPath, contextPath, wakeWordCallback, infererenceCallback, errorCallback);
     //picoVoiceInterface?.startPicoVoice();
-    initAlan();
+    //initAlan();
 
   }
 
@@ -65,14 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  FirebaseDatabase database = FirebaseDatabase.instance;
-  DatabaseReference ref = FirebaseDatabase.instance.ref();
-  Future<void> setDatas() async {
-    await ref.set({
-      "name": "john"
-
-    });
-  }
   @override
   Widget build(BuildContext context) {
 
@@ -109,7 +101,6 @@ class _MyHomePageState extends State<MyHomePage> {
     for(var item in messages){
       tiles.add(bubbles(context,true,item));
     }
-    setDatas();
 
     content = new Column(
       children: tiles,
