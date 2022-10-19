@@ -34,7 +34,7 @@ class _chatBox extends State<chatBox> {
     // }
     //picoVoiceInterface = new PicoVoiceInterface(accessKey, keywordPath, contextPath, wakeWordCallback, infererenceCallback, errorCallback);
     //picoVoiceInterface?.startPicoVoice();
-    //initAlan();
+    initAlan();
   }
 
   void initAlan() {
@@ -62,7 +62,6 @@ class _chatBox extends State<chatBox> {
   }
 
   Widget build(BuildContext context){
-    initAlan();
     return Scaffold(
       body: Container(
         child: SingleChildScrollView(
