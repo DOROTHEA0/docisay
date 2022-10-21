@@ -39,4 +39,13 @@ class UserDao {
     return null;
   }
 
+  static Future<User?> getUserbyEmail(String email) async {
+   return getUserbyId(email.hashCode.toString());
+  }
+
+  static Future<List<User>> getAllUsers() async {
+    List<User> users = <User>[];
+
+    return users;
+  }
 }

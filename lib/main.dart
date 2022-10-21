@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       //home: const MyHomePage(title: 'DociSay Conversation Dialogue'),
-      initialRoute: "/",
+      initialRoute: "/login",
       routes: {
         '/': (context) => MyHomePage(),
         '/login': (context) => Login(),
