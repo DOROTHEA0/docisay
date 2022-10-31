@@ -1,5 +1,7 @@
 
 import 'dart:convert';
+import 'dart:io';
+import 'dart:math';
 
 import 'package:alan_voice/alan_voice.dart';
 import 'package:file_picker/file_picker.dart';
@@ -41,8 +43,8 @@ class _ChatPageState extends State<ChatPage> {
       body: Chat(
         theme: const DefaultChatTheme(inputBackgroundColor: Colors.blueAccent),
         messages: _messages,
-        //onAttachmentPressed: _handleAttachmentPressed,
-        onMessageTap: _handleMessageTap,
+        onAttachmentPressed: _handleAttachmentPressed,
+        //onMessageTap: _handleMessageTap,
         onPreviewDataFetched: _handlePreviewDataFetched,
         onSendPressed: _handleSendPressed,
         showUserAvatars: true,
@@ -171,10 +173,10 @@ class _ChatPageState extends State<ChatPage> {
           final documentsDir = (await getApplicationDocumentsDirectory()).path;
           localPath = '$documentsDir/${message.name}';
 //TODO to deal with
-          // if (!File(localPath).existsSync()) {
-          //   final file = File(localPath);
-          //   await file.writeAsBytes(bytes);
-          // }
+          if (!File(localPath).existsSync()) {
+            final file = File(localPath);
+            await file.writeAsBytes(bytes);
+          }
         } finally {
           final index =
           _messages.indexWhere((element) => element.id == message.id);
