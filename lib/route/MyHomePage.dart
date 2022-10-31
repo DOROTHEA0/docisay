@@ -30,20 +30,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("DociSay:$_currentIndex"),
+        title: Text("Talk with Charlie"),
       ),
       body: _pages[_currentIndex],
 
-        bottomNavigationBar: ConvexAppBar(
-          items: [
-          TabItem(icon: Icons.home,title: "Home"),
-          TabItem(icon: Icons.record_voice_over),
-          TabItem(icon: Icons.person,title: "Me"),],
-          initialActiveIndex: 1,
-          onTap: (i){
-            _changPage(i);
-          },
-        ), // This trailing comma makes auto-formatting nicer for build methods.
+        // bottomNavigationBar: ConvexAppBar(
+        //   items: [
+        //   TabItem(icon: Icons.home,title: "Home"),
+        //   TabItem(icon: Icons.record_voice_over),
+        //   TabItem(icon: Icons.person,title: "Me"),],
+        //   initialActiveIndex: 1,
+        //   onTap: (i){
+        //     _changPage(i);
+        //   },
+        // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
   void _changPage(int index){
